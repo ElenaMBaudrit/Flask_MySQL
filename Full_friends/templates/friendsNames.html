@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Friends Names</title>
+</head>
+<body>
+    <h1>My Friends' Names</h1>
+    <!-- {{ all_friends }} -->
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Friend Since</th>
+            <th> </th>
+        </thead>
+        <tbody>
+        {% for friends_names in all_friends %}
+            <tr>
+                <td> {{ friends_names.name }}</td>
+                <td> {{ friends_names.age }}</td>
+                <td> {{ friends_names.friend_since }}</td>
+                <td> {{ friends_names.year }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h3>Let us know more about you!</h3>
+    <form action="/new_friend" method= 'post'>
+        <p>
+        <label for="name">First Name: </label>
+        <input type="text" id="name" name="name">
+        </p>
+        <p>
+        <label for="last_name">Last Name: </label>
+        <input type="text" id="last_name" name="last_name">
+        </p>
+        <p>
+        <label for="age">Age: </label>
+        <input type="number" min="0" max="300" id="age" name="age">
+        <button type="submit" value="submit">Submit</button>
+    </form>
+</body>
+</html>
